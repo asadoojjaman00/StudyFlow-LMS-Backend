@@ -134,6 +134,10 @@ Developer settings
 
 """
 
+# ### Auth user model 
+AUTH_USER_MODEL = 'users.User'
+
+
 # celery config: 
 
 # Redis as Celery Broker
