@@ -1,0 +1,157 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.env/
+.venv/
+venv.bak/
+venv3/
+env.bak/
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+# If you want to keep migrations in repo, do NOT ignore migrations/
+# migrations/
+
+# Media & static (user uploaded content)
+media/
+staticfiles/
+collectstatic/
+# If you track static in repo, remove the above staticfiles line.
+
+# Secret & env files
+.env
+.env.*          # e.g. .env.local, .env.production
+secrets.json
+credentials.json
+
+# Sentry
+sentry.*.json
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*~.nib
+*.komodoproject
+*.kate-swp
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# JetBrains Rider/IDE settings
+.idea/
+*.iml
+
+# Node / frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnp.*
+.pnp.js
+dist/
+build/
+
+# Docker
+# If you want to keep docker files, do not ignore them — only ignore volumes/compose local files
+docker-compose.override.yml
+*.env.*.local
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+*.pid
+*.seed
+
+# Logs
+logs/
+*.log
+
+# Editor backups
+*.orig
+*.bak
+
+# Python environment/version managers
+.python-version
+.pyenv/
+pipenv/
+Pipfile.lock
+
+# VS Code History
+.history/
+
+# Misc
+coverage/
+.cache/
+.cache/
+*.sqlite3
+
+# Optional: compiled frontend assets (if you build them)
+static/dist/
