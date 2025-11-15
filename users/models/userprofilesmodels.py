@@ -1,6 +1,6 @@
 from django.db import models
 from .baseuserprofile import BaseUserProfile
-
+from .User_model import User
 
 """
 
@@ -28,7 +28,7 @@ class StudentProfile(BaseUserProfile):
         mba     = 'mba', 'MBA'
         bba     = 'bba', 'BBA'
         other   = 'other', 'Other'
-        
+    user           = models.OneToOneField(User, on_delete=models.CASCADE)
     career_focus = models.CharField(
         max_length=100,
         choices=SkillChoice.choices,
@@ -41,7 +41,11 @@ class StudentProfile(BaseUserProfile):
         blank=True,
         null=True
     )
-    
+    def save(self, *args, **kwargs):
+        if self.user.role != User.RoleChoice.student:
+            raise ValueError("User role must be student to create student profile")
+        super().save(*args, **kwargs)
+        
     def __str__(self):
         return self.user.username
 
@@ -53,10 +57,16 @@ Instructor profile model extend by base-user-profile
 """
 
 class InstructorProfile(BaseUserProfile):
-    
+    user           = models.OneToOneField(User, on_delete=models.CASCADE)
     experience_year    = models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
         return self.user.username
 
-
+    def save(self, *args, **kwargs):
+        if self.user.role != User.RoleChoice.instructor:
+            raise ValueError("User role must be instructor to create instructor profile")
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.user.username
