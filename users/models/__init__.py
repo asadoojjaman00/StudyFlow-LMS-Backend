@@ -1,2 +1,2 @@
-from .User_model import User
-from .UserProfiles_models import StudentProfile,InstructorProfile
+from .user_model import User
+from .userprofilesmodels import StudentProfile,InstructorProfile

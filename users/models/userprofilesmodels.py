@@ -1,5 +1,5 @@
 from django.db import models
-from .Base_user_profile import BaseUserProfile
+from .baseuserprofile import BaseUserProfile
 
 
 """

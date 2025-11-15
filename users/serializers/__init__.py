@@ -1,1 +1,2 @@
 from .register_serializer import UserRegisterSerializer
+from .jwt_serializers import CustomTokenObtainPairSerializer

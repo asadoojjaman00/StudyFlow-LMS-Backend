@@ -1,4 +1,4 @@
-from users.models.User_model import User
+from users.models.user_model import User
 from rest_framework import serializers
 
 
