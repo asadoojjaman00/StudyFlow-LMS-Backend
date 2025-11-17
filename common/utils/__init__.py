@@ -1,1 +1,1 @@
-from .permissions import IsInstructor, IsStudent
+from .permissions import IsInstructorOrReadonly

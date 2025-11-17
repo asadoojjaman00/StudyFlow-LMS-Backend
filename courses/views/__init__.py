@@ -1,0 +1,2 @@
+from .course import CourseViewAndCreate
+from .coursedetails import CourseDetailViewAndCreate

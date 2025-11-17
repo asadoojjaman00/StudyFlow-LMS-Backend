@@ -17,7 +17,6 @@ class Course(models.Model):
     is_published   = models.BooleanField(default=False)
     is_active      = models.BooleanField(default=True)
     total_enrolled = models.PositiveIntegerField(default=0)
-    price          = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     type           = models.CharField(
         max_length=10,
         choices=TypeChoices.choices,

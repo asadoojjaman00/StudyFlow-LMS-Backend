@@ -1,7 +1,28 @@
 from rest_framework import serializers
-from models.course import Course
+from courses.models.course import Course
+from django.urls import reverse
 
-class CourseSerializer(serializers.ModelSerializer):
+class CourseInstructorSerializer(serializers.ModelSerializer):
+    detail_url = serializers.SerializerMethodField()
     class Meta:
         model = Course
-        fields = ['id', 'title', 'description', 'thumbnail', 'is_published', 'price', 'type', 'category']
+        fields = '__all__'
+        read_only_fields = ['slug', 'total_enrolled','thumbnail']
+
+    def get_detail_url(self, obj):
+        request = self.context.get('request')
+        return request.build_absolute_uri(reverse('course-detail', kwargs={'pk':obj.pk}))
+
+class CourseStudentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Course
+        fields = [
+            'id',
+            'title',
+            'type',
+            'category',
+            'thumbnail',
+            'total_enrolled',
+            'is_published'
+        ]
+        read_only_fields = fields

@@ -6,6 +6,7 @@ from users.models.User_model import User
 class Enrollment(models.Model):
     student = models.ForeignKey(
         User,
+        limit_choices_to={'role':'student'},
         on_delete=models.CASCADE,
         related_name='enrollments'
     )
