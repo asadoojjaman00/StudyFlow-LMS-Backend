@@ -11,8 +11,13 @@ class CourseInstructorSerializer(serializers.ModelSerializer):
 
     def get_detail_url(self, obj):
         request = self.context.get('request')
-        return request.build_absolute_uri(reverse('course-detail', kwargs={'pk':obj.pk}))
-
+        if request is None:
+            return None
+        
+        try:
+            return request.build_absolute_uri(reverse('course-detail', kwargs={'pk':obj.pk}))
+        except:
+            return f"/course/{obj.pk}/"
 class CourseStudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
