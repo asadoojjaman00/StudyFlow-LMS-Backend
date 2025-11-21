@@ -25,5 +25,7 @@ class Module(models.Model):
     is_active = models.BooleanField(default=False)
     is_unlocked = models.BooleanField(default=False)
 
+  
+    
     def __str__(self):
         return self.course.title
