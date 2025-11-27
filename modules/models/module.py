@@ -23,7 +23,8 @@ class Module(models.Model):
     end_day = models.DateTimeField(null= True, blank = True)
     
     is_active = models.BooleanField(default=False)
-    is_unlocked = models.BooleanField(default=False)
+    is_completed = models.BooleanField(default=False)
+
 
   
     
