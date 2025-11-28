@@ -1,8 +1,17 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from common.utils.permissions import IsInstructorOrReadonly
+
 from courses.models.coursedetails import CourseDetails
+
+from common.utils.permissions import (
+    IsInstructorOfCourse,
+    IsEnrolledStudent,
+    IsCourseCreatorOrReadonly
+)
+
+
+
 
 from courses.serializers.corsedetails import(
     CourseDetailInstructorSerializer,
@@ -10,7 +19,10 @@ from courses.serializers.corsedetails import(
 )
 
 class CourseDetailViewAndCreate(APIView):
-    permission_classes = [IsInstructorOrReadonly]
+    permission_classes = [IsInstructorOfCourse,
+    IsEnrolledStudent,
+    IsCourseCreatorOrReadonly
+]
 
     def get_serializer_class(self,user):
         user = self.request.user 

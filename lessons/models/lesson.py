@@ -15,9 +15,20 @@ class Lesson(models.Model):
         related_name='lessons'
     )
 
-    title = models.CharField(max_length=255)
+   
     lesson_type = models.CharField(
         choices=LessonType.choices,
         null=True,
         blank=True
     )
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=1000, blank=True, null=True)
+    lesson_link = models.URLField(null=True, blank=True)
+    start_date = models.DateTimeField(null=True,blank=True)
+    end_date = models.DateTimeField(null=True,blank=True)
+
+    is_active = models.BooleanField(default=True)
+    
+
+    def __str__(self):
+        return self.title

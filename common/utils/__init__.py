@@ -1,1 +1,1 @@
-from .permissions import IsInstructorOrReadonly
+from .permissions import IsCourseCreatorOrReadonly,IsEnrolledStudent,IsInstructorOfCourse
