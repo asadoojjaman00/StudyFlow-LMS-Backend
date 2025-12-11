@@ -1,9 +1,14 @@
 from django.urls import path
-from .views.course import CourseViewAndCreate
-from .views.coursedetails import CourseDetailViewAndCreate
-
+from courses.views.categoryview import CategoryListCreateView, CategoryRetrieveUpdateDestroyView
+from courses.views.courseviews import(
+    CourseCreateView,
+    CourseUpdateView,
+    CourseDeleteView
+)
 urlpatterns = [
-    path('course/', CourseViewAndCreate.as_view(), name='course-view-create'),
-    path('course/<int:pk>/', CourseDetailViewAndCreate.as_view(), name='course-detail-view-create-update')
+    path('categories/', CategoryListCreateView.as_view(), name='category-list-create'),
+    path('categories/<int:pk>/', CategoryRetrieveUpdateDestroyView.as_view(), name='category-detail'),
+    path('course/', CourseCreateView.as_view(), name='course-create'),
+    path('course/<int:id>/', CourseUpdateView.as_view(), name="course-update"),
+    path('course/<int:id>/', CourseDeleteView.as_view(), name="course-delete"),
 ]
-
