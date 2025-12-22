@@ -1,1 +1,1 @@
-from .module import ModuleStudentSerializer, ModuleInstructorSerializer
+from .moduleserializer import ModuleSerializer

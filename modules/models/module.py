@@ -1,32 +1,23 @@
-from courses.models.course import Course
+from courses.models.coursemodel import Course
 from django.db import models
 
 class Module(models.Model):
-    course   = models.ForeignKey(
+    course = models.ForeignKey(
         Course,
         on_delete=models.CASCADE,
-        related_name='modules'
+        related_name="modules"
     )
+    title = models.CharField(max_length=250)
+    order = models.PositiveIntegerField()
 
-    title = models.CharField(max_length=250,)
-    description = models.TextField(blank=True)
-    order  = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
-
-
-    total_live_class_count = models.CharField(max_length=2,null=True,blank=True)
-    total_assignment_count = models.CharField(max_length=2, null=True, blank=True)
-    total_test_count  = models.CharField(max_length=2, null=True, blank=True)
-    
-
-    start_day = models.DateTimeField(null=True, blank=True)
-    end_day = models.DateTimeField(null= True, blank = True)
-    
-    is_active = models.BooleanField(default=False)
-    is_completed = models.BooleanField(default=False)
-
+    class Meta:
+        ordering = ["order"]
 
   
     
     def __str__(self):
         return self.course.title
+
