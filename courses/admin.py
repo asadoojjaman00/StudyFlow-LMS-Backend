@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Course, Enrollment , CourseDetails
+from .models import Category, Course, Enrollment 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'is_active', 'created_at', 'updated_at')
     prepopulated_fields = {'slug':('name',)}
@@ -11,6 +11,6 @@ class CourseAdmin(admin.ModelAdmin):
 admin.site.register(Category,CategoryAdmin)
 admin.site.register(Course,CourseAdmin)
 admin.site.register(Enrollment)
-admin.site.register(CourseDetails)
+
 
 

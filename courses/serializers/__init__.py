@@ -1,2 +1,2 @@
-from .course import CourseInstructorSerializer, CourseStudentSerializer
-from .corsedetails import CourseDetailInstructorSerializer, CourseDetailStudentSerializer
+from .categoryserializer import CategorySerializer
+from .courseserializers import CourseSerializer

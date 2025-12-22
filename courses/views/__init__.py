@@ -1,2 +1,6 @@
-from .course import CourseViewAndCreate
-from .coursedetails import CourseDetailViewAndCreate
+from .categoryview import CategoryListCreateView,CategoryRetrieveUpdateDestroyView
+from .courseviews import(
+    CourseCreateView,
+    CourseUpdateView,
+    CourseDeleteView
+)
