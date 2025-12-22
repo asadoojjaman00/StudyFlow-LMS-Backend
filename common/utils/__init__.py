@@ -1,1 +1,5 @@
-from .permissions import IsCourseCreatorOrReadonly,IsEnrolledStudent,IsInstructorOfCourse
+from .permissions import (
+    IsAdmin,
+    IsCourseCreatorOrAdmin,IsEnrolledStudent,
+    IsInstructor
+)
